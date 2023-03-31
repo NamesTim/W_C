@@ -16,7 +16,7 @@ def index(request):
     <a href="localhost:8000/auth/login">login</a>
     <p></p>register
     ''')
-@ce
+# @ce
 def register(request):
     if request.method == 'POST':
         this_username=request.POST['username']
@@ -33,7 +33,7 @@ def register(request):
             # return redirect('auth/login')
             return HttpResponse('user'+ this_username +'created!')
     
-@ce
+# @ce
 def userlogin(request):
     if request.method == 'POST':
         this_username=request.POST['username']
@@ -101,7 +101,7 @@ def question(request, questionId):
         return HttpResponse('HTTP method not handled')                
 
 @lr
-@ce
+# @ce
 def answer(request,questionId):
     if request.method=='POST' and request.user.is_authenticated:
         this_author=request.user
